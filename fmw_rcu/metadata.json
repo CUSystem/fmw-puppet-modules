@@ -1,0 +1,16 @@
+{
+  "name": "oracle-fmw_rcu",
+  "version": "0.1.0",
+  "author": "oracle",
+  "summary": "Creating a FMW repository on a 11g or 12c Oracle Database",
+  "license": "MIT",
+  "source": "java.net",
+  "project_page": "java.net",
+  "issues_url": "java.net",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
+    {"name":"oracle-fmw_wls","version_requirement":">= 0.1.0"},
+    {"name":"oracle-fmw_inst","version_requirement":">= 0.1.0"}
+  ]
+}
+
