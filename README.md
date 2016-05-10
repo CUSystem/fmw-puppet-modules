@@ -86,6 +86,10 @@
  	- SOA Suite optional with BPM, BAM and Enterprise Scheduler
  	- Webtier
 
+## Examples
+
+Puppet FMW sample configurations can be found here on this [OTN page](http://www.oracle.com/technetwork/indexes/samplecode/chef-puppet-samples-2952079.html)
+
 ## Changes
 
 See [CHANGELOG](https://github.com/oracle/puppet-samples/tree/master/CHANGELOG.md)
