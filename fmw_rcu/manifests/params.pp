@@ -5,7 +5,7 @@
 #
 class fmw_rcu::params()
 {
-  $version       = '12.1.3' # 10.3.6|12.1.1|12.1.2|12.1.3|12.2.1
+  $version       = '12.1.3' # 10.3.6|12.1.1|12.1.2|12.1.3|12.2.1|12.2.1.1
 
   $os_user       = 'oracle'
   $os_group      = 'oinstall'

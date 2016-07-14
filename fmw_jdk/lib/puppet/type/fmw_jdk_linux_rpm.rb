@@ -5,7 +5,7 @@
 #
 # Puppet module
 module Puppet
-  newtype(:fmw_jdk_linux_rpm) do
+  Type::newtype(:fmw_jdk_linux_rpm) do
     desc 'Installs an Oracle JDK 7 or 8 rpm on a Linux host'
 
     newparam(:name) do

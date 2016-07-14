@@ -4,7 +4,7 @@
 # Copyright 2015 Oracle. All Rights Reserved
 #
 module Puppet
-  newtype(:fmw_domain_nodemanager_service) do
+  Type::newtype(:fmw_domain_nodemanager_service) do
     desc 'allows you to start the WebLogic nodemanager service on a Windows host'
 
     newproperty(:ensure) do

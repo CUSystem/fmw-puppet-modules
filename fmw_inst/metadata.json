@@ -1,6 +1,6 @@
 {
   "name": "oracle-fmw_inst",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "oracle",
   "summary": "Installs FMW Software on a WebLogic middleware environmment",
   "license": "MIT",

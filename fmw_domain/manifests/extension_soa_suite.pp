@@ -23,7 +23,7 @@ class fmw_domain::extension_soa_suite(
     $bpm_enabled = false
   }
 
-  if $fmw_domain::version in ['12.2.1', '12.1.3'] {
+  if $fmw_domain::version in ['12.2.1', '12.2.1.1', '12.1.3'] {
     if $fmw_domain::version ==  '12.1.3' {
       $wls_em_template        = "${fmw_domain::middleware_home_dir}/em/common/templates/wls/oracle.em_wls_template_12.1.3.jar"
       $wls_jrf_template       = "${fmw_domain::middleware_home_dir}/oracle_common/common/templates/wls/oracle.jrf_template_12.1.3.jar"

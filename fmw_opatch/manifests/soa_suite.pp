@@ -20,7 +20,7 @@ class fmw_opatch::soa_suite(
 
   require fmw_inst::soa_suite
 
-  if $fmw_opatch::version in ['12.2.1', '12.1.3'] {
+  if $fmw_opatch::version in ['12.2.1', '12.2.1.1', '12.1.3'] {
     $fmw_oracle_home        = $fmw_opatch::middleware_home_dir
     $oracle_common_home_dir = $fmw_opatch::middleware_home_dir
   } elsif $fmw_opatch::version == '10.3.6' {

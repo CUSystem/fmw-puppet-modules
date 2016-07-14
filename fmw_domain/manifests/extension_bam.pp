@@ -21,7 +21,7 @@ class fmw_domain::extension_bam()
     $bpm_enabled = false
   }
 
-  if $fmw_domain::version in ['12.2.1', '12.1.3'] {
+  if $fmw_domain::version in ['12.2.1', '12.2.1.1', '12.1.3'] {
     $check = '<name>BamServer</name>'
 
     if $fmw_domain::version ==  '12.1.3' {

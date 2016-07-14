@@ -1,6 +1,6 @@
 # default puppet module level
 module Puppet
-  newtype(:fmw_rcu_repository) do
+  Type::newtype(:fmw_rcu_repository) do
     desc 'This is the Oracle WebLogic RCU ( Repository creation utility) installer type'
 
     newproperty(:ensure) do

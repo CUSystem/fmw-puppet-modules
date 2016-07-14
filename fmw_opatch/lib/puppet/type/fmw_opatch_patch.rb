@@ -4,7 +4,7 @@
 # Copyright 2015 Oracle. All Rights Reserved
 #
 module Puppet
-  newtype(:fmw_opatch_patch) do
+  Type::newtype(:fmw_opatch_patch) do
     desc 'allows you to patch Oracle WebLogic 12c or any 11g or 12c FMW products'
 
     newproperty(:ensure) do

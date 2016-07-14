@@ -15,7 +15,7 @@ class fmw_inst::mft(
 
   require fmw_wls::install
 
-  if $fmw_inst::version in ['12.2.1', '12.1.3'] {
+  if $fmw_inst::version in ['12.2.1', '12.2.1.1', '12.1.3'] {
 
     $fmw_template = 'fmw_12c.rsp'
     $fmw_oracle_home = "${fmw_inst::middleware_home_dir}/mft/bin"
@@ -26,6 +26,8 @@ class fmw_inst::mft(
       $fmw_installer_file = "${fmw_inst::tmp_dir}/mft/fmw_12.1.3.0.0_mft.jar"
     } elsif $fmw_inst::version == '12.2.1' {
       $fmw_installer_file = "${fmw_inst::tmp_dir}/mft/fmw_12.2.1.0.0_mft.jar"
+    } else {
+      $fmw_installer_file = "${fmw_inst::tmp_dir}/mft/fmw_${fmw_inst::version}.0_mft.jar"
     }
     $create_file1 = $fmw_installer_file
   }
@@ -40,7 +42,7 @@ class fmw_inst::mft(
       backup  => false,
     }
 
-    if $fmw_inst::version in ['12.2.1', '12.1.3'] {
+    if $fmw_inst::version in ['12.2.1', '12.2.1.1', '12.1.3'] {
       fmw_inst::internal::fmw_extract{'mft':
         source_file       => $source_file,
         create_file_check => $create_file1,
@@ -72,7 +74,7 @@ class fmw_inst::mft(
       backup  => false,
     }
 
-    if $fmw_inst::version in [ '12.2.1', '12.1.3' ] {
+    if $fmw_inst::version in [ '12.2.1', '12.2.1.1', '12.1.3' ] {
       fmw_inst::internal::fmw_extract_windows{'mft':
         version             => $fmw_inst::version,
         middleware_home_dir => $fmw_inst::middleware_home_dir,

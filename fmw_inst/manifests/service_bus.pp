@@ -15,7 +15,7 @@ class fmw_inst::service_bus(
 
   require fmw_wls::install
 
-  if $fmw_inst::version in ['12.2.1', '12.1.3'] {
+  if $fmw_inst::version in ['12.2.1', '12.2.1.1', '12.1.3'] {
 
     $fmw_template = 'fmw_12c.rsp'
     $fmw_oracle_home = "${fmw_inst::middleware_home_dir}/osb/bin"
@@ -26,6 +26,8 @@ class fmw_inst::service_bus(
       $fmw_installer_file = "${fmw_inst::tmp_dir}/service_bus/fmw_12.1.3.0.0_osb.jar"
     } elsif $fmw_inst::version == '12.2.1' {
       $fmw_installer_file = "${fmw_inst::tmp_dir}/service_bus/fmw_12.2.1.0.0_osb.jar"
+    } else {
+      $fmw_installer_file = "${fmw_inst::tmp_dir}/service_bus/fmw_${fmw_inst::version}.0_osb.jar"
     }
     $create_file1 = $fmw_installer_file
 
@@ -58,7 +60,7 @@ class fmw_inst::service_bus(
       backup  => false,
     }
 
-    if $fmw_inst::version in [ '12.2.1', '12.1.3', '10.3.6' ] {
+    if $fmw_inst::version in [ '12.2.1', '12.2.1.1', '12.1.3', '10.3.6' ] {
       fmw_inst::internal::fmw_extract{'service_bus':
         source_file       => $source_file,
         create_file_check => $create_file1,
@@ -89,7 +91,7 @@ class fmw_inst::service_bus(
       backup  => false,
     }
 
-    if $fmw_inst::version in [ '12.2.1', '12.1.3', '10.3.6' ] {
+    if $fmw_inst::version in [ '12.2.1', '12.2.1.1', '12.1.3', '10.3.6' ] {
       fmw_inst::internal::fmw_extract_windows{'service_bus':
         version             => $fmw_inst::version,
         middleware_home_dir => $fmw_inst::middleware_home_dir,

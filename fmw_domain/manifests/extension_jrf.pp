@@ -9,7 +9,7 @@ class fmw_domain::extension_jrf()
 
   $check = 'em.ear'
 
-  if $fmw_domain::version in ['12.2.1', '12.1.3', '12.1.2'] {
+  if $fmw_domain::version in ['12.2.1', '12.2.1.1', '12.1.3', '12.1.2'] {
 
     if $fmw_domain::version ==  '12.1.2' {
       $restricted       = false

@@ -1,6 +1,6 @@
 {
   "name": "oracle-fmw_opatch",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "oracle",
   "summary": "Patch Oracle WebLogic 12c or any FMW 11g or 12c product",
   "license": "MIT",

@@ -4,7 +4,7 @@
 # Copyright 2015 Oracle. All Rights Reserved
 #
 module Puppet
-  newtype(:fmw_domain_wlst) do
+  Type::newtype(:fmw_domain_wlst) do
     desc 'allows you to execute a WLST script'
 
     newproperty(:ensure) do

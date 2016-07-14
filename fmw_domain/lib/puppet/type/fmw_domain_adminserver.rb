@@ -4,7 +4,7 @@
 # Copyright 2015 Oracle. All Rights Reserved
 #
 module Puppet
-  newtype(:fmw_domain_adminserver) do
+  Type::newtype(:fmw_domain_adminserver) do
     desc 'allows you to start the WebLogic Adminserver'
 
     newproperty(:ensure) do

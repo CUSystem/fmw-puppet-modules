@@ -18,15 +18,20 @@ class fmw_inst::webcenter(
   require fmw_wls::install
 
 
-  if $fmw_inst::version in ['12.2.1'] {
+  if $fmw_inst::version in ['12.2.1', '12.2.1.1'] {
 
     $fmw_template = 'fmw_12c.rsp'
     $fmw_oracle_home = "${fmw_inst::middleware_home_dir}/wcportal"
     $option_array = []
 
     $fmw_install_type = 'WebCenter Portal'
-    $fmw_installer_file = "${fmw_inst::tmp_dir}/webcenter/fmw_12.2.1.0.0_wcportal_generic.jar"
+    if $fmw_inst::version == '12.2.1' {
+      $fmw_installer_file = "${fmw_inst::tmp_dir}/webcenter/fmw_12.2.1.0.0_wcportal_generic.jar"
+    } else {
+      $fmw_installer_file = "${fmw_inst::tmp_dir}/webcenter/fmw_${fmw_inst::version}.0_wcportal_generic.jar"
+    }
     $create_file1 = $fmw_installer_file
+    $create_file2 = undef
 
   } elsif $fmw_inst::version == '10.3.6' {
 

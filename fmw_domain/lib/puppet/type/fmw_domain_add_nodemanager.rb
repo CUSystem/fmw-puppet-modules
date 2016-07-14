@@ -4,7 +4,7 @@
 # Copyright 2015 Oracle. All Rights Reserved
 #
 module Puppet
-  newtype(:fmw_domain_add_nodemanager) do
+  Type::newtype(:fmw_domain_add_nodemanager) do
     desc 'allows you to add a WebLogic nodemanager on a Windows host'
 
     newproperty(:ensure) do

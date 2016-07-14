@@ -4,7 +4,7 @@
 # Copyright 2015 Oracle. All Rights Reserved
 #
 module Puppet
-  newtype(:fmw_domain_nodemanager_status) do
+  Type::newtype(:fmw_domain_nodemanager_status) do
     desc 'allows you to check if the nodemanager is listening'
 
     newproperty(:ensure) do

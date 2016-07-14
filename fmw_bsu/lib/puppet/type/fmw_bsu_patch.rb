@@ -4,7 +4,7 @@
 # Copyright 2015 Oracle. All Rights Reserved
 #
 module Puppet
-  newtype(:fmw_bsu_patch) do
+  Type::newtype(:fmw_bsu_patch) do
     desc 'allows you to patch Oracle WebLogic 10.3.6 or 12.1.1'
 
     newproperty(:ensure) do
