@@ -21,7 +21,7 @@ class fmw_domain::extension_service_bus()
     $bpm_enabled = false
   }
 
-  if $fmw_domain::version in ['12.2.1', '12.2.1.1', '12.1.3'] {
+  if $fmw_domain::version in ['12.2.1', '12.2.1.1', '12.2.1.2', '12.1.3'] {
     $check = 'osb.em'
 
     if $fmw_domain::version ==  '12.1.3' {

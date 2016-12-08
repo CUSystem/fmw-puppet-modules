@@ -60,7 +60,7 @@
 ### fmw_inst
 - install FMW 11g/ 12c software
 	- JRF/ADF 11g
-	- SOA Suite & Service Bus 11g, 12.1.3, 12.2.1, 12.2.1.1
+	- SOA Suite & Service Bus 11g, 12.1.3, 12.2.1, 12.2.1.1, 12.2.1.2
 	- MFT 12.1.3, 12.2.1
 	- OIM 11.2
 	- WebCenter 11g

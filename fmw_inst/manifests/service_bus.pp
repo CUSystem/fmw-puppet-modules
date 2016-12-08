@@ -15,7 +15,7 @@ class fmw_inst::service_bus(
 
   require fmw_wls::install
 
-  if $fmw_inst::version in ['12.2.1', '12.2.1.1', '12.1.3'] {
+  if $fmw_inst::version in ['12.2.1', '12.2.1.1', '12.2.1.2', '12.1.3'] {
 
     $fmw_template = 'fmw_12c.rsp'
     $fmw_oracle_home = "${fmw_inst::middleware_home_dir}/osb/bin"
@@ -60,7 +60,7 @@ class fmw_inst::service_bus(
       backup  => false,
     }
 
-    if $fmw_inst::version in [ '12.2.1', '12.2.1.1', '12.1.3', '10.3.6' ] {
+    if $fmw_inst::version in [ '12.2.1', '12.2.1.1', '12.2.1.2', '12.1.3', '10.3.6' ] {
       fmw_inst::internal::fmw_extract{'service_bus':
         source_file       => $source_file,
         create_file_check => $create_file1,
@@ -91,7 +91,7 @@ class fmw_inst::service_bus(
       backup  => false,
     }
 
-    if $fmw_inst::version in [ '12.2.1', '12.2.1.1', '12.1.3', '10.3.6' ] {
+    if $fmw_inst::version in [ '12.2.1', '12.2.1.1', '12.2.1.2', '12.1.3', '10.3.6' ] {
       fmw_inst::internal::fmw_extract_windows{'service_bus':
         version             => $fmw_inst::version,
         middleware_home_dir => $fmw_inst::middleware_home_dir,

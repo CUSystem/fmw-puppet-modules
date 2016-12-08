@@ -18,7 +18,7 @@ class fmw_inst::webcenter(
   require fmw_wls::install
 
 
-  if $fmw_inst::version in ['12.2.1', '12.2.1.1'] {
+  if $fmw_inst::version in ['12.2.1', '12.2.1.1', '12.2.1.2'] {
 
     $fmw_template = 'fmw_12c.rsp'
     $fmw_oracle_home = "${fmw_inst::middleware_home_dir}/wcportal"

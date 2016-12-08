@@ -25,7 +25,7 @@ define fmw_inst::internal::fmw_install_linux(
       cwd     => $tmp_dir,
       timeout => 0,
     }
-  } elsif $version in ['12.2.1', '12.2.1.1', '12.1.3', '12.1.2'] {
+  } elsif $version in ['12.2.1', '12.2.1.1', '12.2.1.2', '12.1.3', '12.1.2'] {
     exec{ "Install ${title}":
       command => "${java_home_dir}/bin/java -Xmx1024m -Djava.io.tmpdir=${tmp_dir} -jar ${installer_file} -waitforcompletion -silent -responseFile ${rsp_file} -invPtrLoc ${orainst_dir}/oraInst.loc -jreLoc ${java_home_dir}",
       creates => $oracle_home_dir,

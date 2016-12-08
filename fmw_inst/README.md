@@ -320,6 +320,7 @@ Quickstart:
 
     SOFTWARE_FOLDER=/software BEAKER_destroy=onpass BEAKER_debug=true bundle exec rspec spec/acceptance
     SOFTWARE_FOLDER=/software BEAKER_destroy=onpass BEAKER_debug=true BEAKER_set=centos-70-x64 bundle exec rspec spec/acceptance
+    SOFTWARE_FOLDER=/Users/edwinbiemond/software BEAKER_destroy=onpass BEAKER_debug=true BEAKER_set=oel-7.2-x64 bundle exec rspec spec/acceptance
 
     set SOFTWARE_FOLDER=c:/software
     set BEAKER_destroy=onpass

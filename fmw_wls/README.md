@@ -21,7 +21,7 @@ The fmw_wls module allows you to install Oracle WebLogic on a Windows, Linux or 
 
 ## Module description
 
-This modules allows you to install any WebLogic 11g (10.3.6, 12.1.1) or 12c (12.1.2, 12.1.3, 12.2.1, 12.2.1.1 ) version on any Windows, Linux or Solaris host or VM.
+This modules allows you to install any WebLogic 11g (10.3.6, 12.1.1) or 12c (12.1.2, 12.1.3, 12.2.1, 12.2.1.1, 12.2.1.2 ) version on any Windows, Linux or Solaris host or VM.
 
 ## Setup
 
@@ -52,7 +52,7 @@ with all the defaults
 
     class fmw_wls::params()
     {
-      $version       = '12.1.3' # 10.3.6|12.1.1|12.1.2|12.1.3|12.2.1|12.2.1.1
+      $version       = '12.1.3' # 10.3.6|12.1.1|12.1.2|12.1.3|12.2.1|12.2.1.1|12.2.1.2
       $install_type  = 'wls' # infra or wls
 
       $os_user       = 'oracle'

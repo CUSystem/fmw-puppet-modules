@@ -21,7 +21,7 @@ class fmw_rcu::common(
 ) inherits fmw_rcu::params {
 
 
-  if $version in ['12.2.1', '12.2.1.1', '12.1.3'] {
+  if $version in ['12.2.1', '12.2.1.1', '12.2.1.2', '12.1.3'] {
     if ( $oracle_home_dir == undef or is_string($oracle_home_dir) == false ) {
       fail('oracle_home_dir parameter cannot be empty')
     }
@@ -30,7 +30,7 @@ class fmw_rcu::common(
     $rcu_oracle_home_dir = $oracle_home_dir
   }
 
-  if $version in ['12.2.1', '12.2.1.1'] {
+  if $version in ['12.2.1', '12.2.1.1', '12.2.1.2'] {
 
     $component_array = ['MDS',
                         'IAU',

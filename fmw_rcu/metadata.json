@@ -1,6 +1,6 @@
 {
   "name": "oracle-fmw_rcu",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "oracle",
   "summary": "Creating a FMW repository on a 11g or 12c Oracle Database",
   "license": "MIT",

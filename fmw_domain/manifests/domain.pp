@@ -18,7 +18,7 @@ class fmw_domain::domain(
 
   require fmw_wls::install
 
-  if $fmw_domain::version in ['12.2.1', '12.2.1.1', '12.1.3'] {
+  if $fmw_domain::version in ['12.2.1', '12.2.1.1', '12.2.1.2', '12.1.3'] {
     $wls_base_template = "${fmw_domain::weblogic_home_dir}/common/templates/wls/wls.jar"
   } elsif $fmw_domain::version == '10.3.6' {
     $wls_base_template = "${fmw_domain::weblogic_home_dir}/common/templates/domains/wls.jar"

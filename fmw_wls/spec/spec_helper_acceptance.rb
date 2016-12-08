@@ -61,14 +61,14 @@ RSpec.configure do |c|
         on(default, 'mkdir C:/software')
         scp_to(default, "#{ENV['SOFTWARE_FOLDER']}/jdk-7u79-windows-x64.exe", 'C:/software')
         scp_to(default, "#{ENV['SOFTWARE_FOLDER']}/fmw_12.1.3.0.0_wls.jar", 'C:/software')
-        scp_to(default, "#{ENV['SOFTWARE_FOLDER']}/fmw_12.2.1.1.0_wls.jar", '/software')
+        scp_to(default, "#{ENV['SOFTWARE_FOLDER']}/fmw_12.2.1.2.0_wls.jar", '/software')
         scp_to(default, "#{ENV['SOFTWARE_FOLDER']}/wls1036_generic.jar", 'C:/software')
         scp_to(default, "#{ENV['SOFTWARE_FOLDER']}/jdk-8u111-windows-x64.exe", '/software')
       else
         on(default, 'mkdir /software')
         scp_to(default, "#{ENV['SOFTWARE_FOLDER']}/jdk-7u79-linux-x64.tar.gz", '/software')
         scp_to(default, "#{ENV['SOFTWARE_FOLDER']}/fmw_12.1.3.0.0_wls.jar", '/software')
-        scp_to(default, "#{ENV['SOFTWARE_FOLDER']}/fmw_12.2.1.1.0_wls.jar", '/software')
+        scp_to(default, "#{ENV['SOFTWARE_FOLDER']}/fmw_12.2.1.2.0_wls.jar", '/software')
         scp_to(default, "#{ENV['SOFTWARE_FOLDER']}/wls1036_generic.jar", '/software')
         scp_to(default, "#{ENV['SOFTWARE_FOLDER']}/jdk-8u111-linux-x64.tar.gz", '/software')
       end

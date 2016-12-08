@@ -1,6 +1,6 @@
 {
   "name": "oracle-fmw_bsu",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "oracle",
   "summary": "Patch Oracle WebLogic 10.3.6 or 12.1.1",
   "license": "MIT",

@@ -14,7 +14,7 @@ class fmw_wls::internal::wls_windows(
     data => $fmw_wls::ora_inventory_dir,
   }
 
-  if ( $fmw_wls::version in ['12.2.1', '12.2.1.1', '12.1.3', '12.1.2'] ){
+  if ( $fmw_wls::version in ['12.2.1', '12.2.1.1', '12.2.1.2', '12.1.3', '12.1.2'] ){
     $wls_template = 'wls_12c.rsp'
   } elsif ( $fmw_wls::version in ['10.3.6', '12.1.1'] ){
     $wls_template = 'wls_11g.rsp'
@@ -42,7 +42,7 @@ class fmw_wls::internal::wls_windows(
       timeout     => 0,
       require     => [File["${fmw_wls::tmp_dir}/${wls_template}"],Registry::Value['inst_loc'],],
     }
-  } elsif ( $fmw_wls::version in ['12.2.1', '12.2.1.1', '12.1.3', '12.1.2'] ){
+  } elsif ( $fmw_wls::version in ['12.2.1', '12.2.1.1', '12.2.1.2', '12.1.3', '12.1.2'] ){
     exec{ 'Install WLS':
       command => "${java_home_dir}\\bin\\java.exe -Xmx1024m -Djava.io.tmpdir=${fmw_wls::tmp_dir} -jar ${source_file} -silent -responseFile ${fmw_wls::tmp_dir}/${wls_template}",
       creates => "${fmw_wls::middleware_home_dir}/oracle_common",

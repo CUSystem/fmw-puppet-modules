@@ -17,7 +17,7 @@ class fmw_inst::soa_suite(
 
   require fmw_wls::install
 
-  if $fmw_inst::version in ['12.2.1', '12.2.1.1', '12.1.3'] {
+  if $fmw_inst::version in ['12.2.1', '12.2.1.1', '12.2.1.2', '12.1.3'] {
 
     $fmw_template = 'fmw_12c.rsp'
     $fmw_oracle_home = "${fmw_inst::middleware_home_dir}/soa/bin"
@@ -73,7 +73,7 @@ class fmw_inst::soa_suite(
       backup  => false,
     }
 
-    if $fmw_inst::version in [ '12.2.1', '12.2.1.1', '12.1.3', '10.3.6' ] {
+    if $fmw_inst::version in [ '12.2.1', '12.2.1.1', '12.2.1.2', '12.1.3', '10.3.6' ] {
       fmw_inst::internal::fmw_extract{'soa_suite':
         source_file         => $source_file,
         source_2_file       => $source_2_file,
@@ -107,7 +107,7 @@ class fmw_inst::soa_suite(
       backup  => false,
     }
 
-    if $fmw_inst::version in [ '12.2.1', '12.2.1.1', '12.1.3', '10.3.6' ] {
+    if $fmw_inst::version in [ '12.2.1', '12.2.1.1', '12.2.1.2', '12.1.3', '10.3.6' ] {
       fmw_inst::internal::fmw_extract_windows{'soa_suite':
         version             => $fmw_inst::version,
         middleware_home_dir => $fmw_inst::middleware_home_dir,
