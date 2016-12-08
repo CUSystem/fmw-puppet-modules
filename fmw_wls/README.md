@@ -228,6 +228,8 @@ Quickstart:
     SOFTWARE_FOLDER=/software BEAKER_destroy=onpass BEAKER_debug=true bundle exec rspec spec/acceptance
     SOFTWARE_FOLDER=/software BEAKER_destroy=onpass BEAKER_debug=true BEAKER_set=centos-70-x64 bundle exec rspec spec/acceptance
     SOFTWARE_FOLDER=/software BEAKER_destroy=onpass BEAKER_debug=true BEAKER_set=debian-78-x64 bundle exec rspec spec/acceptance
+    SOFTWARE_FOLDER=/Users/edwinbiemond/software BEAKER_destroy=onpass BEAKER_debug=true BEAKER_set=oel-7.2-x64 bundle exec rspec spec/acceptance
+
 
     # Ruby on Windows
     use only 32-bits, its more stable, http://rubyinstaller.org/downloads/

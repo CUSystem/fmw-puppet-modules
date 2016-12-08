@@ -17,14 +17,14 @@ describe 'jdk_7_1213' do
             }
           }
 
-          $java_home_dir = '/usr/java/jdk1.7.0_75'
+          $java_home_dir = '/usr/java/jdk1.7.0_79'
 
           Class['fmw_wls::setup'] ->
             Class['fmw_wls::install']
 
           class { 'fmw_jdk::install':
             java_home_dir => $java_home_dir,
-            source_file   => '/software/jdk-7u75-linux-x64.tar.gz',
+            source_file   => '/software/jdk-7u79-linux-x64.tar.gz',
           }
 
           # can be removed when all the default are used.
@@ -52,12 +52,12 @@ describe 'jdk_7_1213' do
       shell('sleep 15')
     end
 
-    describe file('/usr/java/jdk1.7.0_75') do
+    describe file('/usr/java/jdk1.7.0_79') do
       it { should be_directory }
       it { should be_owned_by 'root' }
     end
 
-    describe file('/usr/java/jdk1.7.0_75/bin/java') do
+    describe file('/usr/java/jdk1.7.0_79/bin/java') do
       it { should be_file }
       it { should be_owned_by 'root' }
       it { should be_executable }

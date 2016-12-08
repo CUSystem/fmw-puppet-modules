@@ -47,8 +47,8 @@ RSpec.configure do |c|
   c.formatter = :documentation
 
   c.before :suite do
-    puppet_module_install(:source => project_root, :module_name => 'fmw_wls')
-    puppet_module_install(:source => "#{project_root}/../fmw_jdk", :module_name => 'fmw_jdk')
+    puppet_module_install(:source => project_root, :module_name => 'fmw_wls', :target_module_path => '/etc/puppetlabs/code/environments/production/modules')
+    puppet_module_install(:source => "#{project_root}/../fmw_jdk", :module_name => 'fmw_jdk', :target_module_path => '/etc/puppetlabs/code/environments/production/modules')
     hosts.each do |host|
       on host, puppet('module', 'install', 'puppetlabs-stdlib', '--force', '--version', '3.2.0'), :acceptable_exit_codes => [0, 1]
       on host, puppet('module', 'install', 'puppetlabs-registry', '--force', '--version', '1.1.0'), :acceptable_exit_codes => [0, 1]
@@ -59,14 +59,18 @@ RSpec.configure do |c|
         c.winrm.set_timeout 300
 
         on(default, 'mkdir C:/software')
-        scp_to(default, "#{ENV['SOFTWARE_FOLDER']}/jdk-7u75-windows-x64.exe", 'C:/software')
+        scp_to(default, "#{ENV['SOFTWARE_FOLDER']}/jdk-7u79-windows-x64.exe", 'C:/software')
         scp_to(default, "#{ENV['SOFTWARE_FOLDER']}/fmw_12.1.3.0.0_wls.jar", 'C:/software')
+        scp_to(default, "#{ENV['SOFTWARE_FOLDER']}/fmw_12.2.1.1.0_wls.jar", '/software')
         scp_to(default, "#{ENV['SOFTWARE_FOLDER']}/wls1036_generic.jar", 'C:/software')
+        scp_to(default, "#{ENV['SOFTWARE_FOLDER']}/jdk-8u111-windows-x64.exe", '/software')
       else
         on(default, 'mkdir /software')
-        scp_to(default, "#{ENV['SOFTWARE_FOLDER']}/jdk-7u75-linux-x64.tar.gz", '/software')
+        scp_to(default, "#{ENV['SOFTWARE_FOLDER']}/jdk-7u79-linux-x64.tar.gz", '/software')
         scp_to(default, "#{ENV['SOFTWARE_FOLDER']}/fmw_12.1.3.0.0_wls.jar", '/software')
+        scp_to(default, "#{ENV['SOFTWARE_FOLDER']}/fmw_12.2.1.1.0_wls.jar", '/software')
         scp_to(default, "#{ENV['SOFTWARE_FOLDER']}/wls1036_generic.jar", '/software')
+        scp_to(default, "#{ENV['SOFTWARE_FOLDER']}/jdk-8u111-linux-x64.tar.gz", '/software')
       end
     end
   end
