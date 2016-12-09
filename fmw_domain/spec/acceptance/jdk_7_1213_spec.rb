@@ -15,9 +15,9 @@ describe 'jdk_7_1213' do
             unless ( $::osfamily == 'RedHat' and $::operatingsystemmajrelease == '5') {
               include fmw_jdk::rng_service
             }
-            $java_home_dir   = '/usr/java/jdk1.7.0_75'
+            $java_home_dir   = '/usr/java/jdk1.7.0_79'
           } elsif $::kernel == 'SunOS' {
-            $java_home_dir   = '/usr/jdk/instances/jdk1.7.0_75'
+            $java_home_dir   = '/usr/jdk/instances/jdk1.7.0_79'
           }
 
           $version             = '12.1.3'
@@ -30,13 +30,13 @@ describe 'jdk_7_1213' do
           if $::kernel == 'Linux' {
             class { 'fmw_jdk::install':
               java_home_dir => $java_home_dir,
-              source_file   => '/software/jdk-7u75-linux-x64.tar.gz',
+              source_file   => '/software/jdk-7u79-linux-x64.tar.gz',
             }
           } elsif $::kernel == 'SunOS' {
             class { 'fmw_jdk::install':
               java_home_dir   => $java_home_dir,
-              source_file     => '/software/jdk-7u75-solaris-i586.tar.gz',
-              source_x64_file => '/software/jdk-7u75-solaris-x64.tar.gz',
+              source_file     => '/software/jdk-7u79-solaris-i586.tar.gz',
+              source_x64_file => '/software/jdk-7u79-solaris-x64.tar.gz',
             }
           }
 
@@ -119,12 +119,12 @@ describe 'jdk_7_1213' do
     end
 
     if ['debian', 'redhat'].include?(os[:family])
-      describe file('/usr/java/jdk1.7.0_75') do
+      describe file('/usr/java/jdk1.7.0_79') do
         it { should be_directory }
         it { should be_owned_by 'root' }
       end
 
-      describe file('/usr/java/jdk1.7.0_75/bin/java') do
+      describe file('/usr/java/jdk1.7.0_79/bin/java') do
         it { should be_file }
         it { should be_owned_by 'root' }
         it { should be_executable }
@@ -166,12 +166,12 @@ describe 'jdk_7_1213' do
       end
     elsif ['solaris'].include?(os[:family])
 
-      describe file('/usr/jdk/instances/jdk1.7.0_75') do
+      describe file('/usr/jdk/instances/jdk1.7.0_79') do
         it { should be_directory }
         it { should be_owned_by 'root' }
       end
 
-      describe file('/usr/jdk/instances/jdk1.7.0_75/bin/java') do
+      describe file('/usr/jdk/instances/jdk1.7.0_79/bin/java') do
         it { should be_file }
         it { should be_owned_by 'root' }
         it { should be_executable }
@@ -179,7 +179,7 @@ describe 'jdk_7_1213' do
 
       describe file('/usr/bin/java') do
         it { should be_symlink }
-        it { should be_linked_to '/usr/jdk/instances/jdk1.7.0_75/bin/java' }
+        it { should be_linked_to '/usr/jdk/instances/jdk1.7.0_79/bin/java' }
       end
 
       describe group('oinstall') do
